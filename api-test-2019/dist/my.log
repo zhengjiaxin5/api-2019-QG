@@ -1,0 +1,8 @@
+[FATAL] 2019-09-17 22:26:43,667 com.edu.utils.Log - the Text: 'message1' is not Present!
+[ERROR] 2019-09-17 22:26:43,672 com.edu.utils.Log - com.edu.test.SkuListTest@475530b9-TestSkuList1运行失败，需要截屏
+[FATAL] 2019-09-18 13:35:02,706 com.edu.utils.Log - the Text: 'message1' is not Present!
+[ERROR] 2019-09-18 13:35:02,711 com.edu.utils.Log - com.edu.test.SkuListTest@26be92ad-TestSkuList1运行失败
+[FATAL] 2019-09-18 13:38:26,265 com.edu.utils.Log - the Text: 'message1' is not Present!
+[ERROR] 2019-09-18 13:38:26,274 com.edu.utils.Log - com.edu.test.SkuListTest@26be92ad-TestSkuList1运行失败
+[FATAL] 2019-09-18 13:39:27,529 com.edu.utils.Log - the Text: 'message1' is not Present!
+[ERROR] 2019-09-18 13:39:27,534 com.edu.utils.Log - com.edu.test.SkuListTest@26be92ad-TestSkuList1运行失败
