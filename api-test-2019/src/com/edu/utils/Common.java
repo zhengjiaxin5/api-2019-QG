@@ -34,7 +34,7 @@ public class Common {
 		CloseableHttpClient client=HttpClients.custom().
 				setDefaultRequestConfig(gConfig).setDefaultCookieStore(cookie).build();
 		
-		String loginurl=ReadPro.getPropValue("")+"/common/fgadmin/login";
+		String loginurl=ReadPro.getPropValue("base_url")+"/common/fgadmin/login";
 		HttpPost post =new HttpPost(loginurl);
 		//…Ë÷√«Î«ÛÃÂ
 		HttpEntity userEntity=new StringEntity(user.toString());
