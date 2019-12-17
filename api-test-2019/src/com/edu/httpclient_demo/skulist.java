@@ -1,15 +1,11 @@
-package com.webtest.httpclient_demo;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+package com.edu.httpclient_demo;
+import java.io.IOException;
+import org.apache.http.client.CookieStore;
+import org.apache.http.cookie.Cookie;
 import org.testng.annotations.Test;
 
-
-
+import com.edu.core.HttpDriver;
+import com.edu.utils.Checker;
 /*
  * ×÷Õß£º±«Ðûè½
  * */
@@ -53,4 +49,3 @@ public class skulist {
 	
 
 }
-

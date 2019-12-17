@@ -1,9 +1,18 @@
-package com.webtest.httpclient_demo;
+package com.edu.httpclient_demo;
 
+import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.testng.annotations.Test;
+
+import com.edu.core.HttpDriver;
+
+import net.sf.json.JSONObject;
 
 /*
- * ×÷Õß£ºãÆÐ¦Ç§
+ * ãÆÐ¦Ç§
  * */
 
 public class LoginTest {
@@ -43,4 +52,4 @@ public class LoginTest {
 	
 
 }
-}
+

@@ -1,19 +1,44 @@
-package com.webtest.httpclient_demo;
+package com.edu.httpclient_demo;
+
+import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+import org.apache.http.ParseException;
+import org.apache.http.client.CookieStore;
 import org.testng.annotations.Test;
 
-import com.webtest.core.BaseTest;
+import com.edu.core.BaseTest;
+import com.edu.core.HttpDriver;
+import com.edu.utils.Checker;
+import com.edu.utils.Common;
+
+import net.sf.json.JSONObject;
 
 /*
  * ×÷Õß£ºÂíÒúÏé
  * */
+public class DeleteAddress{
+	Checker check=null;
+	public void getSubmitBtpara(JSONObject user,CookieStore cookie) throws Exception {
+		String res=HttpDriver.doPost("/fgadmin/address/delete",user,cookie);
+		
+		System.out.println(res);
+		check=new Checker(res);
+	}
+	@Test
+	public void test1() throws Exception {
+		CookieStore cookie= Common.getcookie("20000000001", "netease123");
+		JSONObject user=new JSONObject();
+		user.element("id", "77243286");
+		getSubmitBtpara(user,cookie);
+		check.verifyXpath("code", "200");
+	}
+	@Test
+	public void test2() throws Exception {
+		CookieStore cookie= Common.getcookie("20000000001", "netease123");
+		JSONObject user=new JSONObject();
+		getSubmitBtpara(user,cookie);
+		check.verifyXpath("code", "200");
+	}
+}
