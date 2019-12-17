@@ -66,7 +66,7 @@ public class HttpDriver {
 		return content;
 	}
 
-	// °ÑmapÀàÐÍ×ª»»ÎªString,²¢ÓÃ&¼ÓÒÔÆ´½Ó
+	// ï¿½ï¿½mapï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªString,ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½Æ´ï¿½ï¿½
 	public static String mapToString(Map<String, Object> para) {
 
 		StringBuilder sBuilder = new StringBuilder();
@@ -187,7 +187,7 @@ public class HttpDriver {
 		RequestConfig gConfig = RequestConfig.custom().setCookieSpec(CookieSpecs.STANDARD).build();
 		httpClient = HttpClients.custom().setDefaultRequestConfig(gConfig).setDefaultCookieStore(cookie).build();
 
-		HttpPost post = new HttpPost(url);
+		HttpPost post = new HttpPost(ReadPro.getPropValue("base_url") +url);
 		post.addHeader("Content-Type", "application/json");
 		HttpEntity data = new StringEntity(para.toString());
 		post.setEntity(data);

@@ -17,10 +17,10 @@ import net.sf.json.JSONObject;
  * */
 
 public class Submit {
-	//String submit_url="/fgadmin/orders/submit";
+	String submit_url="/fgadmin/orders/submit";
 	@Test
 	public void Testsubmit() throws IOException, Exception {
-		String url=ReadPro.getPropValue("base_url")+ReadPro.getPropValue("submit_url");
+//		String url=ReadPro.getPropValue("base_url")+ReadPro.getPropValue("submit_url");
 		 CookieStore cookie=Common.getCookie("20000000000", "netease123");
 		 JSONObject para=new JSONObject();
 		 para.element("skuIds","2,3");
@@ -32,7 +32,7 @@ public class Submit {
 		 para.element("province","52");
 		 para.element("city","25");
 		 para.element("area","22");
-		 String result=HttpDriver.doPost(url, para, cookie);
+		 String result=HttpDriver.doPost(submit_url, para, cookie);
 		 System.out.println(result);
 		 Checker checker=new Checker(result);
 		 checker.verifyXpath("message", "success");

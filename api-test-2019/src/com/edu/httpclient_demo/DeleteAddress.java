@@ -22,13 +22,12 @@ public class DeleteAddress{
 	Checker check=null;
 	public void getSubmitBtpara(JSONObject user,CookieStore cookie) throws Exception {
 		String res=HttpDriver.doPost("/fgadmin/address/delete",user,cookie);
-		
 		System.out.println(res);
 		check=new Checker(res);
 	}
 	@Test
 	public void test1() throws Exception {
-		CookieStore cookie= Common.getcookie("20000000001", "netease123");
+		CookieStore cookie= Common.getCookie("20000000000", "netease123");
 		JSONObject user=new JSONObject();
 		user.element("id", "77243286");
 		getSubmitBtpara(user,cookie);
@@ -36,9 +35,10 @@ public class DeleteAddress{
 	}
 	@Test
 	public void test2() throws Exception {
-		CookieStore cookie= Common.getcookie("20000000001", "netease123");
+		CookieStore cookie= Common.getCookie("20000000000", "netease123");
 		JSONObject user=new JSONObject();
+		user.element("id", "");
 		getSubmitBtpara(user,cookie);
-		check.verifyXpath("code", "200");
+		check.verifyXpath("code", "400");
 	}
 }

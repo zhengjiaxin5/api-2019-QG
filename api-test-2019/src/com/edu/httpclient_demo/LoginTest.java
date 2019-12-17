@@ -23,9 +23,9 @@ public class LoginTest {
 		user.element("phoneArea", "86");
 		user.element("phoneNumber", "20000000000");
 		user.element("password", "netease123");
-		String c = dr.doPost("/login", user);
+		String c = dr.doPost("/common/fgadmin/login", user);
 		JSONObject jsonResult=JSONObject.fromObject(c);
-		assertEquals(jsonResult.getString("message"), "success");
+		assertEquals(jsonResult.getString("msg"), "success");
 	}
 	@Test
 	public void test2() throws ClientProtocolException, IOException {
@@ -35,7 +35,7 @@ public class LoginTest {
 		user.element("password", "netease123");
 		String c = dr.doPost("/common/fgadmin/login", user);
 		JSONObject jsonResult=JSONObject.fromObject(c);
-		assertEquals(jsonResult.getString("message"), "success");
+		assertEquals(jsonResult.getString("msg"), "fail");
 	}
 	@Test
 	public void test3() throws ClientProtocolException, IOException {
@@ -45,7 +45,7 @@ public class LoginTest {
 		user.element("password", "netease123");
 		String c = dr.doPost("/common/fgadmin/login", user);
 		JSONObject jsonResult=JSONObject.fromObject(c);
-		assertEquals(jsonResult.getString("message"), "success");
+		assertEquals(jsonResult.getString("msg"), "fail");
 	}
 
 	

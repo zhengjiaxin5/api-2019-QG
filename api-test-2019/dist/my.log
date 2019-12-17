@@ -6,3 +6,4 @@
 [ERROR] 2019-09-18 13:38:26,274 com.edu.utils.Log - com.edu.test.SkuListTest@26be92ad-TestSkuList1运行失败
 [FATAL] 2019-09-18 13:39:27,529 com.edu.utils.Log - the Text: 'message1' is not Present!
 [ERROR] 2019-09-18 13:39:27,534 com.edu.utils.Log - com.edu.test.SkuListTest@26be92ad-TestSkuList1运行失败
+[FATAL] 2019-12-17 15:29:23,117 com.edu.utils.Log - expectedValue doesn't match actualValue,actual Value is :No message available; expected Value is :success

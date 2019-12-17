@@ -27,9 +27,10 @@ public class Addresslist {
 //	CookieStore cookieStore=new BasicCookieStore();
 	String url="/fgadmin/address/list";
 	String url2="/fgadmin/address/new";
+	Common CookieDemo=new Common();
 	@Test(description="地址为空时",priority=1)
 	public void nulladdress() throws IOException, Exception {
-		CookieStore cookieStore=CookieDemo.getcookie("20000000000", "netease123");
+		CookieStore cookieStore=CookieDemo.getCookie("20000000000", "netease123");
 		System.out.println(cookieStore);
 		String result=HttpDriver.doGet(url, cookieStore);
 		System.out.println(result);
@@ -40,7 +41,7 @@ public class Addresslist {
 	}
 	@Test(priority=2)
 	public void add1() throws Exception {
-		CookieStore cookieStore=CookieDemo.getcookie("20000000000", "netease123");
+		CookieStore cookieStore=CookieDemo.getCookie("20000000000", "netease123");
 		System.out.println(cookieStore);
 		JSONObject user=new JSONObject();
 		user.element("receiverName", "张三");
@@ -58,7 +59,7 @@ public class Addresslist {
 	}
 	@Test(description="地址不为空",priority=3)
 	public void addresslist() throws IOException, Exception {
-		CookieStore cookieStore=CookieDemo.getcookie("20000000000", "netease123");
+		CookieStore cookieStore=CookieDemo.getCookie("20000000000", "netease123");
 		System.out.println(cookieStore);
 		String result=HttpDriver.doGet(url, cookieStore);
 		System.out.println(result);

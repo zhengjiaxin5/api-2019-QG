@@ -19,10 +19,11 @@ import net.sf.json.JSONObject;
  * 作者：耿一凡
  * */
 public class NewAddressTest {
+	Common Common=new Common();
 	HttpDriver dr=new HttpDriver();
 	@Test
-	public void testSuccess() throws ClientProtocolException, IOException {
-		CookieStore cookie = Common.getCookie();
+	public void testSuccess() throws Exception {
+		CookieStore cookie= Common.getCookie("20000000000", "netease123");
 		JSONObject user = new JSONObject();
 		user.element("receiverName", "张三");
 		user.element("cellPhone", "12345678901");
@@ -36,8 +37,8 @@ public class NewAddressTest {
 	}
 	
 	@Test
-	public void testFailID() throws ClientProtocolException, IOException {
-		CookieStore cookie = Common.getCookie();
+	public void testFailID() throws Exception {
+		CookieStore cookie= Common.getCookie("20000000000", "netease123");
 		JSONObject user = new JSONObject();
 		user.element("id", "1");
 		user.element("receiverName", "张三");
@@ -52,8 +53,8 @@ public class NewAddressTest {
 	}
 	
 	@Test
-	public void testFailOtherNull() throws ClientProtocolException, IOException {
-		CookieStore cookie = Common.getCookie();
+	public void testFailOtherNull() throws Exception {
+		CookieStore cookie= Common.getCookie("20000000000", "netease123");
 		JSONObject user = new JSONObject();
 		user.element("receiverName", "张三");
 		user.element("addressDetail", "浙江大学");
