@@ -13,7 +13,7 @@ import com.edu.utils.ReadPro;
 import net.sf.json.JSONObject;
 
 /*
- * ×÷Õß£ºÖ£¼ÎÜ°
+ * ä½œè€…ï¼šéƒ‘å˜‰é¦¨
  * */
 
 public class Submit {

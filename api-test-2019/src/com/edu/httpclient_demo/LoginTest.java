@@ -12,7 +12,7 @@ import com.edu.core.HttpDriver;
 import net.sf.json.JSONObject;
 
 /*
- * ��Цǧ
+ * 闫笑千
  * */
 
 public class LoginTest {

@@ -20,21 +20,21 @@ import net.sf.json.JSONObject;
 import com.edu.core.*;
 
 /*
- * ×÷Õß£ºÍõÏşµ¤
+ * ä½œè€…ï¼šç‹æ™“ä¸¹
  * */
 
 public class Addresslist {
 //	CookieStore cookieStore=new BasicCookieStore();
 	String url="/fgadmin/address/list";
 	String url2="/fgadmin/address/new";
-	@Test(description="µØÖ·Îª¿ÕÊ±",priority=1)
+	@Test(description="åœ°å€ä¸ºç©ºæ—¶",priority=1)
 	public void nulladdress() throws IOException, Exception {
 		CookieStore cookieStore=CookieDemo.getcookie("20000000000", "netease123");
 		System.out.println(cookieStore);
 		String result=HttpDriver.doGet(url, cookieStore);
 		System.out.println(result);
 		JSONObject jsonResult=JSONObject.fromObject(result);
-		assertEquals(jsonResult.getString("message"), "ÊÕ»ñµØÖ·Îª¿Õ");
+		assertEquals(jsonResult.getString("message"), "æ”¶è·åœ°å€ä¸ºç©º");
 		assertEquals(jsonResult.getInt("code"), 201);
 		
 	}
@@ -43,12 +43,12 @@ public class Addresslist {
 		CookieStore cookieStore=CookieDemo.getcookie("20000000000", "netease123");
 		System.out.println(cookieStore);
 		JSONObject user=new JSONObject();
-		user.element("receiverName", "ÕÅÈı");
+		user.element("receiverName", "å¼ ä¸‰");
 		user.element("cellPhone", "12345678901");
-		user.element("addressDetail", "Õã½­´óÑ§");
-		user.element("province", "Õã½­Ê¡");
-		user.element("city", "º¼ÖİÊĞ");
-		user.element("area", "±õ½­Çø");
+		user.element("addressDetail", "æµ™æ±Ÿå¤§å­¦");
+		user.element("province", "æµ™æ±Ÿçœ");
+		user.element("city", "æ­å·å¸‚");
+		user.element("area", "æ»¨æ±ŸåŒº");
 		String result=HttpDriver.doPost(url2, user, cookieStore);
 		System.out.println(result);
 		JSONObject jsonResult=JSONObject.fromObject(result);
@@ -56,7 +56,7 @@ public class Addresslist {
 		assertEquals(jsonResult.getInt("code"), 200);
 		
 	}
-	@Test(description="µØÖ·²»Îª¿Õ",priority=3)
+	@Test(description="åœ°å€ä¸ä¸ºç©º",priority=3)
 	public void addresslist() throws IOException, Exception {
 		CookieStore cookieStore=CookieDemo.getcookie("20000000000", "netease123");
 		System.out.println(cookieStore);

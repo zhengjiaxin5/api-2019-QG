@@ -16,7 +16,7 @@ import com.edu.utils.Common;
 import net.sf.json.JSONObject;
 
 /*
- * ×÷Õß£ºÂíÒúÏé
+ * ä½œè€…ï¼šé©¬å¯…ç¥¥
  * */
 public class DeleteAddress{
 	Checker check=null;

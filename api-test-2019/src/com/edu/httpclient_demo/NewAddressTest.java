@@ -16,7 +16,7 @@ import net.sf.json.JSONObject;
 
 
 /*
- * ×÷Õß£º¹¢Ò»·²
+ * ä½œè€…ï¼šè€¿ä¸€å‡¡
  * */
 public class NewAddressTest {
 	HttpDriver dr=new HttpDriver();
@@ -24,12 +24,12 @@ public class NewAddressTest {
 	public void testSuccess() throws ClientProtocolException, IOException {
 		CookieStore cookie = Common.getCookie();
 		JSONObject user = new JSONObject();
-		user.element("receiverName", "ÕÅÈı");
+		user.element("receiverName", "å¼ ä¸‰");
 		user.element("cellPhone", "12345678901");
-		user.element("addressDetail", "Õã½­´óÑ§");
-		user.element("province", "Õã½­Ê¡");
-		user.element("city", "º¼ÖİÊĞ");
-		user.element("area", "±õ½­Çø");
+		user.element("addressDetail", "æµ™æ±Ÿå¤§å­¦");
+		user.element("province", "æµ™æ±Ÿçœ");
+		user.element("city", "æ­å·å¸‚");
+		user.element("area", "æ»¨æ±ŸåŒº");
 		String c = HttpDriver.doPost("/fgadmin/address/new", user,cookie);
 		JSONObject jsonResult=JSONObject.fromObject(c);
 		assertEquals(jsonResult.getString("message"), "success");
@@ -40,12 +40,12 @@ public class NewAddressTest {
 		CookieStore cookie = Common.getCookie();
 		JSONObject user = new JSONObject();
 		user.element("id", "1");
-		user.element("receiverName", "ÕÅÈı");
+		user.element("receiverName", "å¼ ä¸‰");
 		user.element("cellPhone", "12345678901");
-		user.element("addressDetail", "Õã½­´óÑ§");
-		user.element("province", "Õã½­Ê¡");
-		user.element("city", "º¼ÖİÊĞ");
-		user.element("area", "±õ½­Çø");
+		user.element("addressDetail", "æµ™æ±Ÿå¤§å­¦");
+		user.element("province", "æµ™æ±Ÿçœ");
+		user.element("city", "æ­å·å¸‚");
+		user.element("area", "æ»¨æ±ŸåŒº");
 		String c = dr.doPost("/fgadmin/address/new", user,cookie);
 		JSONObject jsonResult=JSONObject.fromObject(c);
 		assertEquals(jsonResult.getString("message"), "success");
@@ -55,11 +55,11 @@ public class NewAddressTest {
 	public void testFailOtherNull() throws ClientProtocolException, IOException {
 		CookieStore cookie = Common.getCookie();
 		JSONObject user = new JSONObject();
-		user.element("receiverName", "ÕÅÈı");
-		user.element("addressDetail", "Õã½­´óÑ§");
+		user.element("receiverName", "å¼ ä¸‰");
+		user.element("addressDetail", "æµ™æ±Ÿå¤§å­¦");
 		user.element("province", "571");
-		user.element("city", "º¼ÖİÊĞ");
-		user.element("area", "±õ½­Çø");
+		user.element("city", "æ­å·å¸‚");
+		user.element("area", "æ»¨æ±ŸåŒº");
 		String c = dr.doPost("/fgadmin/address/new", user,cookie);
 		JSONObject jsonResult=JSONObject.fromObject(c);
 		assertEquals(jsonResult.getString("message"), "success");

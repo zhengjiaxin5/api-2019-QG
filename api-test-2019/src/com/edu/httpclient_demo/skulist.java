@@ -7,13 +7,13 @@ import org.testng.annotations.Test;
 import com.edu.core.HttpDriver;
 import com.edu.utils.Checker;
 /*
- * ×÷Õß£º±«Ğûè½
+ * ä½œè€…ï¼šé²å®£æ
  * */
 
 public class skulist {
 	String skuList_url="/common/skulist";
 	String skulistByid_url="/common/skulistbyid";
-	@Test(description="»ñÈ¡skulist")
+	@Test(description="è·å–skulist")
 	public void testSkuList() throws IOException, Exception {
 		String result=HttpDriver.doGet(skuList_url);
 		Checker check=new Checker(result);
@@ -24,7 +24,7 @@ public class skulist {
 			e.printStackTrace();
 		}
 	}
-	@Test(description="»ñÈ¡skulist´øÕıÈ·µÄ²ÎÊıid")
+	@Test(description="è·å–skulistå¸¦æ­£ç¡®çš„å‚æ•°id")
 	public void testSkuListByid1() throws IOException, Exception {
 		String result=HttpDriver.doGet(skulistByid_url,"goodsId=1");
 		Checker check=new Checker(result);
@@ -35,12 +35,12 @@ public class skulist {
 			e.printStackTrace();
 		}
 	}
-	@Test(description="»ñÈ¡skulist´ø´íÎóµÄ²ÎÊıid")
+	@Test(description="è·å–skulistå¸¦é”™è¯¯çš„å‚æ•°id")
 	public void testSkuListByid2() throws IOException, Exception {
 		String result=HttpDriver.doGet(skulistByid_url,"goodsId=2");
 		Checker check=new Checker(result);
 		try {
-			check.assertXpath("message", "ÉÌÆ·ID²»´æÔÚ");
+			check.assertXpath("message", "å•†å“IDä¸å­˜åœ¨");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

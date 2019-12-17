@@ -11,7 +11,7 @@ import com.edu.core.HttpDriver;
 
 import net.sf.json.JSONObject;
 /*
- * ×÷Õß£ºÀîÇïË®
+ * ä½œè€…ï¼šæç§‹æ°´
  * */
 
 public class Transportfee {
@@ -20,7 +20,7 @@ public class Transportfee {
 	public static void Transfee1() throws Exception {
 		Map<String, Object> para=new HashMap<String, Object>();
 		para.put("id", "1");
-		para.put("addressDetail", "ºÓ±±Ê¦·¶´óÑ§");
+		para.put("addressDetail", "æ²³åŒ—å¸ˆèŒƒå¤§å­¦");
 		String result=HttpDriver.doGet(url,para);
 		System.out.println(result);
 		JSONObject jsonResult=JSONObject.fromObject(result);
@@ -32,11 +32,11 @@ public class Transportfee {
 	public static void Transfee2() throws Exception {
 		Map<String, Object> para=new HashMap<String, Object>();
 		para.put("id", "aaa");
-		para.put("addressDetail", "ºÓ±±Ê¦·¶´óÑ§");
+		para.put("addressDetail", "æ²³åŒ—å¸ˆèŒƒå¤§å­¦");
 		String result=HttpDriver.doGet(url,para);
 		System.out.println(result);
 		JSONObject jsonResult=JSONObject.fromObject(result);
-		assertEquals(jsonResult.getString("message"), "ÇëÇóÊ§°Ü");
+		assertEquals(jsonResult.getString("message"), "è¯·æ±‚å¤±è´¥");
 		assertEquals(jsonResult.getInt("code"), 400);
 	}
 }
